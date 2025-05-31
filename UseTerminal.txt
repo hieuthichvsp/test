@@ -1,0 +1,2 @@
+--Lệnh chạy gửi mail hàng tuần(test): php artisan report:weekly-room-usage
+--Lệnh chạy gửi mail hàng tuần: php artisan schedule:work

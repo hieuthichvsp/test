@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files with Dropzone</title>
+
+    <!-- Thêm Dropzone CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css" />
+
+    <!-- Thêm Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+        .dropzone {
+            border: 2px dashed #007bff;
+            margin: 10px;
+            background-color: #f9f9f9;
+            min-height: 100px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Nút để mở modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalthemfile">
+        Mở Modal
+    </button>
+
+    <!-- Modal for File Upload -->
+    <div class="modal fade" id="modalthemfile" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" style="font-size: 20px; float: left;">
+                        <p>THÊM FILE</p>
+                    </h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="uploadForm" class="form-horizontal form-label-left" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Dòng 1 -->
+                            <div class="col-md-4">
+                                <label>Đề nghị mua sắm</label>
+                                <div class="dropzone" id="file1Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Chủ trương mua sắm</label>
+                                <div class="dropzone" id="file2Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Hợp đồng</label>
+                                <div class="dropzone" id="file3Dropzone"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Dòng 2 -->
+                            <div class="col-md-4">
+                                <label>Biên bản thương thảo hợp đồng</label>
+                                <div class="dropzone" id="file4Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Báo giá 1</label>
+                                <div class="dropzone" id="file5Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Báo giá 2</label>
+                                <div class="dropzone" id="file6Dropzone"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Dòng 3 -->
+                            <div class="col-md-4">
+                                <label>Báo giá 3</label>
+                                <div class="dropzone" id="file7Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Chỉ định thầu (nhà cung cấp)</label>
+                                <div class="dropzone" id="file8Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Quyết định phê duyệt</label>
+                                <div class="dropzone" id="file9Dropzone"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Dòng 4 -->
+                            <div class="col-md-4">
+                                <label>Quyết định chỉ định nhà cung cấp</label>
+                                <div class="dropzone" id="file10Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Biên bản nghiệm thu - Thanh lý hợp đồng</label>
+                                <div class="dropzone" id="file11Dropzone"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Bảng XĐGTKL công việc hoàn thành</label>
+                                <div class="dropzone" id="file12Dropzone"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal"
+                            data-target="#modalthem">Trở lại</button>
+                        <button id="saveSuccess" type="button" class="btn btn-success">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm jQuery và Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Thêm Dropzone JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+
+    <!-- Kết nối Dropzone với các phần upload -->
+    <script>
+        Dropzone.options.file1Dropzone = {
+            url: "/path/to/upload",
+            paramName: "file[1]",
+            maxFilesize: 5,
+            acceptedFiles: ".doc, .docx, .pdf, image/*",
+            addRemoveLinks: true,
+            dictDefaultMessage: "Kéo và thả file vào đây hoặc nhấp để chọn file",
+        };
+        Dropzone.options.file2Dropzone = {
+            url: "/path/to/upload",
+            paramName: "file[2]",
+            maxFilesize: 5,
+            acceptedFiles: ".doc, .docx, .pdf, image/*",
+            addRemoveLinks: true,
+            dictDefaultMessage: "Kéo và thả file vào đây hoặc nhấp để chọn file",
+        };
+        Dropzone.options.file3Dropzone = {
+            url: "/path/to/upload",
+            paramName: "file[3]",
+            maxFilesize: 5,
+            acceptedFiles: ".doc, .docx, .pdf, image/*",
+            addRemoveLinks: true,
+            dictDefaultMessage: "Kéo và thả file vào đây hoặc nhấp để chọn file",
+        };
+        // Tạo cấu hình cho các file còn lại từ file4 đến file12
+        for (let i = 4; i <= 12; i++) {
+            Dropzone.options[`file${i}Dropzone`] = {
+                url: "/path/to/upload",
+                paramName: `file[${i}]`,
+                maxFilesize: 5,
+                acceptedFiles: ".doc, .docx, .pdf, image/*",
+                addRemoveLinks: true,
+                dictDefaultMessage: "Kéo và thả file vào đây hoặc nhấp để chọn file",
+            };
+        }
+    </script>
+
+</body>
+
+</html>

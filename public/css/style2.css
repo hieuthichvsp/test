@@ -1,0 +1,476 @@
+/* CSS cho header */
+.nav-header .profile-element {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.dropdown .clear {
+    padding-left: 5px;
+    font-size   : 15px;
+}
+
+.border-bottom .navbar-static-top {
+    border-bottom: 1px solid #e7eaec;
+    margin-bottom: 0;
+}
+
+.gray-bg .main-content {
+    height    : 630px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.gray-bg .footer {
+    padding: 20px 0;
+}
+
+/* CSS cho tooltip */
+[data-tooltip] {
+    position: relative;
+    cursor  : pointer;
+}
+
+[data-tooltip]:hover::before {
+    content         : attr(data-tooltip);
+    position        : absolute;
+    bottom          : 100%;
+    left            : 50%;
+    transform       : translateX(-50%);
+    margin-bottom   : 10px;
+    padding         : 4px 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color           : white;
+    font-size       : 12px;
+    border-radius   : 4px;
+    white-space     : nowrap;
+    z-index         : 100;
+}
+
+[data-tooltip]:hover::after {
+    content      : '';
+    position     : absolute;
+    bottom       : 100%;
+    left         : 50%;
+    transform    : translateX(-50%);
+    margin-bottom: 2px;
+    border-width : 5px;
+    border-style : solid;
+    border-color : rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    z-index      : 101;
+}
+
+/* CSS cho label trongform */
+.row .control-label {
+    text-align: right;
+    font-size : 14px;
+    margin-top: 7px;
+}
+
+#addModalLabel {
+    font-size  : 20px;
+    font-weight: bold;
+    color      : rgb(114, 192, 248);
+}
+
+#editModalLabel {
+    font-size  : 20px;
+    font-weight: bold;
+    color      : rgb(114, 192, 248);
+}
+
+#deleteModalLabel {
+    font-size  : 20px;
+    font-weight: bold;
+    color      : rgb(240, 36, 36);
+}
+
+#uploadModalLabel {
+    font-size  : 20px;
+    font-weight: bold;
+    color      : rgb(114, 192, 248);
+}
+
+.modal-body p strong {
+    font-size: 16px;
+}
+
+/* CSS cho table */
+.my-ibox-title {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+}
+
+.ibox-title {
+    padding: 10px 20px 10px 15px;
+}
+
+.ibox-content {
+    border-top: none;
+}
+
+.table-responsive {
+    overflow-x: hidden;
+    width     : auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media screen and (max-width: 1535px) {
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
+
+
+/* CSS cho autocomplete  */
+#phongSearch::placeholder {
+    color     : #999;
+    font-style: italic;
+}
+
+#phongSearch {
+    position: relative;
+    z-index : 1;
+}
+
+.form-group.autocomplete {
+    position: relative;
+}
+
+.form-group.autocomplete {
+    position: relative;
+}
+
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-y: auto;
+    border    : 1px solid #d4d4d4;
+    background: white;
+    z-index   : 2147483647;
+    position  : absolute;
+}
+
+.ui-autocomplete .ui-menu-item:hover,
+.ui-autocomplete .ui-state-active {
+    color           : white;
+    font-weight     : bold;
+    font-size       : 17px;
+    background-color: #4e90bd;
+}
+
+@media (max-width: 767px) {
+    .room-map {
+        max-width : 100%;
+        overflow-x: auto;
+    }
+
+    #hasMap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CSS cho sơ đồ phòng máy */
+.status_pc {
+    outline        : none;
+    border         : 0;
+    background     : #007bff;
+    color          : white;
+    border-radius  : 8px;
+    height         : 40px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    font-weight    : bold;
+    cursor         : pointer;
+    transition     : 0.3s;
+}
+
+.room-map {
+    background-color: #ddd;
+    padding         : 20px;
+    border          : 2px solid #4d4d4d;
+    border-radius   : 5px;
+    max-width       : 900px;
+    margin          : auto;
+}
+
+.machine-grid {
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+}
+
+.pc {
+    width           : calc(100% / 8 - 10px);
+    max-width       : 60px;
+    height          : 40px;
+    background-color: #337ab7;
+    color           : white;
+    line-height     : 60px;
+    margin          : 5px;
+    border-radius   : 6px;
+    text-align      : center;
+    font-weight     : bold;
+    outline         : none;
+    cursor          : pointer;
+    border          : none;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+}
+
+.broken {
+    background-color: red;
+}
+
+@media (max-width: 900px) {
+    .pc {
+        width: calc(100% / 6 - 10px);
+    }
+}
+
+@media (max-width: 700px) {
+    .pc {
+        width: calc(100% / 4 - 10px);
+    }
+}
+
+@media (max-width: 500px) {
+    .pc {
+        width: calc(100% / 3 - 10px);
+    }
+}
+
+/*CSS cho error message*/
+.error-message {
+    color      : red;
+    font-size  : 1.1rem;
+    font-weight: bold;
+    float      : right;
+    display    : none;
+}
+
+.dropdown-menu-right {
+    right    : 0;
+    left     : auto;
+    min-width: 250px;
+}
+
+.dropdown-menu-right>li {
+    white-space: nowrap;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: #f5f5f5;
+}
+
+/* CSS cho modal */
+.modal-md {
+    width : 550px;
+    margin: 30px auto;
+}
+
+.modal-header {
+    position: relative;
+    padding : 15px 30px;
+}
+
+.modal-header button {
+    position : absolute;
+    top      : 20px;
+    right    : 15px;
+    font-size: 24px;
+}
+
+.modal-title {
+    font-size  : 20px;
+    font-weight: bold;
+    margin     : 0;
+}
+
+
+.modal-body {
+    position  : relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal {
+    z-index: 1050;
+}
+
+.modal-edit,
+.modal-add {
+    max-height: 70vh;
+}
+
+
+/* CSS cho loading spinner */
+.loader {
+    width   : 64px;
+    height  : 64px;
+    position: relative;
+}
+
+.loader::before,
+.loader::after {
+    content      : "";
+    position     : absolute;
+    left         : 0;
+    bottom       : 0;
+    width        : 64px;
+    height       : 64px;
+    border-radius: 50%;
+    background   : #1572eb;
+    animation    : bounce 1.5s infinite ease-in-out;
+    opacity      : 0.6;
+}
+
+.loader::after {
+    animation-delay: -0.75s;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+/* CSS cho select2 */
+.select2-container--default .select2-selection--single {
+    border    : 1px solid #e5e6e7;
+    height    : auto !important;
+    min-height: 34px;
+}
+
+.select2-selection__rendered {
+    line-height : 1.25 !important;
+    padding-left: 10px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+    top   : 0;
+    right : 8px;
+}
+
+/* CSS cho clock picker  */
+.clockpicker-popover {
+    z-index : 9999 !important;
+    position: absolute !important;
+}
+
+.select2-dropdown-modal {
+    z-index: 99999 !important;
+}
+
+/* CSS profile*/
+.m-20 {
+    margin: 0 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+    padding      : 10px 0;
+    border-bottom: 1px solid #e7eaec;
+}
+
+.mt-10 {
+    margin-bottom: 10px;
+    padding      : 10px 0;
+    border-top   : 1px solid #e7eaec;
+}
+
+.text-lg {
+    font-size: 1.75rem;
+}
+
+.title-profile {
+    font-size       : 2rem;
+    background-color: hsla(194, 80%, 56%, 0.932);
+    outline         : oldlace;
+    color           : aliceblue;
+}
+
+.label-profile {
+    font-size: 1.5rem;
+}
+
+.bg-blue {
+    background-color: #348ff0;
+}
+
+.dataTables_filter {
+    float          : right !important;
+    margin-left    : 6px;
+    justify-content: end;
+}
+
+.dataTables_filter label {
+    display    : flex;
+    align-items: center;
+    gap        : 5px;
+    font-weight: normal;
+}
+
+.dataTables_filter input {
+    height       : 32px;
+    padding      : 5px 10px;
+    font-size    : 14px;
+    border       : 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* CSS cho table */
+table.dataTable {
+    border-collapse: collapse;
+    border         : 1px solid #a4a3a3 !important;
+}
+
+table.dataTable th {
+    border-bottom: none;
+    border       : 1px solid #a4a3a3 !important;
+}
+
+table.dataTable td {
+    border: 1px solid #a4a3a3 !important;
+}
+
+/* CSS cho 2 nút thao tác */
+.btn-action {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    gap            : 10px;
+}
+
+/* CSS cho ô input bắt buộc nhập */
+.label-required::after {
+    content: " *";
+    color  : red;
+}
+
+/* CSS cho Swal */
+.swal-actions-right {
+    justify-content: flex-end !important;
+    padding-right  : 0 !important;
+}
+
+/* CSS cho title */
+.h2-title {
+    font-size     : 1.5rem;
+    font-weight   : bold;
+    color         : #45423d;
+    margin        : 20px 0;
+    text-transform: uppercase;
+}
